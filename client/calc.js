@@ -178,7 +178,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl1_total10: function() {
-		return Math.ceil(this.airflakexl1_total()/10);
+		return Math.ceil(this.airflakexl1_total()/5);
 	},
 
 	// -----------
@@ -202,7 +202,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl2_total10: function() {
-		return Math.ceil(this.airflakexl2_total()/10);
+		return Math.ceil(this.airflakexl2_total()/5);
 	},
 
 	// ----------
@@ -220,7 +220,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl3_total10: function() {
-		return Math.ceil(this.airflakexl3_total()/10);
+		return Math.ceil(this.airflakexl3_total()/5);
 	},
 
 	// ----------
@@ -238,7 +238,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl4_total10: function() {
-		return Math.ceil(this.airflakexl4_total()/10);
+		return Math.ceil(this.airflakexl4_total()/5);
 	}, 
 
 	// ----------
@@ -262,7 +262,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl5_total10: function() {
-		return Math.ceil(this.airflakexl5_total()/10);
+		return Math.ceil(this.airflakexl5_total()/5);
 	}, 
 
 	// ----------
@@ -286,7 +286,7 @@ Template.calc.viewmodel({
 	},
 
 	airflakexl6_total10: function() {
-		return Math.ceil(this.airflakexl6_total()/10);
+		return Math.ceil(this.airflakexl6_total()/5);
 	}, 
 
 	aircone_e2: 0.475,
@@ -480,7 +480,6 @@ Template.calc.helpers({
 		return state.get('data')
 	},
 	noselected: function() {
-		console.log(state.get('data'))
 		if(Object.getOwnPropertyNames(state.get('data')).length === 0) {
 			return true;
 		}
