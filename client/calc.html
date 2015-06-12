@@ -1,0 +1,603 @@
+<template name="calc">
+
+	<div class="row container">
+		<div class="col-md-2 left-menu">
+
+			<form class="form" style="margin-top:5px;">
+
+				<img src="/logo.png"><br><br>
+				<div class="form-group">
+					<select class="products form-control" multiple="multiple" style="min-width: 250px;">
+						<option value="airflake">Airflake</option>
+						<option value="airflakexl">Airflake XL</option>
+						<option value="aircone">Aircone</option>
+						<option value="airwave">Airwave</option>
+						<option value="bitswall">Bits Wall</option>
+						<option value="triline">Triline Wall</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">Width</div>
+						<input type="number" min="1" class="form-control col-xs-1" data-bind="value: width">
+						<div class="input-group-addon">m</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">Height</div>
+						<input type="number" min="1" class="form-control col-xs-1" data-bind="value: height">
+						<div class="input-group-addon">m</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-9 col-md-offset-3">
+
+			{{#if noselected}}
+				<div class="container">
+					<h1>The calculator</h1>
+					<p>Please use the form to select a product or several products to get the corresponding number needed for your measurements</p>
+				</div>
+			{{/if}}
+	
+			<div class="container {{#unless selected.airflake}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Airflake</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake1.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake1_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake1_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake1_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake1_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake2.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake2_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake2_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake2_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake2_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake3.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake3_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake3_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake3_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake3_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake4.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake4_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake4_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake4_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake4_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake5.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake5_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake5_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake5_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake5_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake6.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflake6_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflake6_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflake6_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflake6_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="container {{#unless selected.airflakexl}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Airflake XL</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake1.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl1_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl1_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl1_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl1_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake2.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl2_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl2_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl2_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl2_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake3.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl3_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl3_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl3_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl3_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake4.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl4_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl4_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl4_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl4_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake5.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl5_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl5_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl5_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl5_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airflake6.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airflakexl6_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airflakexl6_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airflakexl6_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: airflakexl6_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="container {{#unless selected.aircone}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Aircone</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/aircone1.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: aircone1_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: aircone1_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: aircone1_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: aircone1_total10"></td>
+								</tr>
+								<tr>
+									<td>Straight edge pairs</td>
+									<td data-bind="text: aircone1_edge"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/aircone2.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: aircone2_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: aircone2_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: aircone2_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: aircone2_total10"></td>
+								</tr>
+								<tr>
+									<td>Straight edge pairs</td>
+									<td data-bind="text: aircone2_edge"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/aircone3.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: aircone3_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: aircone3_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: aircone3_total"></td>
+								</tr>
+								<tr>
+									<td>10-pack</td>
+									<td data-bind="text: aircone3_total10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="container {{#unless selected.bitswall}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Bits Wall</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/bitswall1.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: bitswall1_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: bitswall1_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: bitswall1_total"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/bitswall2.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: bitswall2_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: bitswall2_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: bitswall2_total"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="container {{#unless selected.airwave}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Bits Wall</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airwave1.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airwave1_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airwave1_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airwave1_total"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/airwave2.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Width</td>
+									<td data-bind="text: airwave2_width"></td>
+								</tr>
+								<tr>
+									<td>Height</td>
+									<td data-bind="text: airwave2_height"></td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: airwave2_total"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="container {{#unless selected.triline}} hidden {{/unless}}" style="max-width: 500px;">
+				<h1>Triline Wall</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="/triline.png">
+					</div>
+					<div class="col-md-6">
+						<table class="table table-condensed table-hover">
+							<tbody>
+								<tr>
+									<td>Total</td>
+									<td data-bind="text: triline_total"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
